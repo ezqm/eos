@@ -1,0 +1,162 @@
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:linear-gradient(-45deg,#87CEEB,#d6f2ff,#b3ecff,#e0f7ff);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:white;
+    text-shadow:0 0 10px #fff,
+                0 0 20px #b3ecff,
+                0 0 40px #b3ecff;
+    animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #fff,0 0 20px #b3ecff;}
+    to{ text-shadow:0 0 20px #fff,0 0 40px #87CEEB;}
+}
+
+.sales{
+    text-align:center;
+    color:#003366;
+    font-size:15px;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap:20px;
+    padding:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,#b3ecff 0%,transparent 60%);
+    opacity:0.3;
+    transform:rotate(25deg);
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.price{
+    font-size:20px;
+    color:#0099cc;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:12px;
+    background:#e6faff;
+    border:2px solid #b3ecff;
+    font-weight:bold;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+button:hover{
+    background:white;
+    box-shadow:0 0 20px #b3ecff;
+    transform:scale(1.05);
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    backdrop-filter: blur(10px);
+    background:rgba(0,0,0,0.25);
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+}
+
+.modal-content{
+    background:white;
+    color:#003366;
+    width:100%;
+    max-width:420px;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 0 40px #b3ecff;
+    animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:1px solid #b3ecff;
+    margin:10px 0;
+}
+
+.qty{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:10px 0;
+}
+
+.qty button{
+    width:45px;
+}
+
+.pix-box{
+    background:#e6faff;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    margin-top:15px;
+    box-shadow:0 0 20px #b3ecff inset;
+}
+  </style>
